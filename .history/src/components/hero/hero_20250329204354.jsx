@@ -16,7 +16,7 @@ const Hero = () => {
         </div>
         <div className="hero-image">
           <img
-            src="/poto.webp"
+            src="/images/poto.webp
             alt="Ledvin"
           />
         </div>

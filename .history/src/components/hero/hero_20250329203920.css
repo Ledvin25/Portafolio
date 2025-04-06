@@ -1,0 +1,101 @@
+/* Hero.css */
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  background: linear-gradient(to bottom, #000000, #001400);
+  color: #ffffff;
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 50%; 
+}
+
+.hero-greeting {
+  font-size: 1.2rem;
+  color: #00ff00;
+  margin: 0;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  font-family: inherit;
+}
+
+.btn-resume {
+  border: 2px solid #00ff00;
+  color: #000;
+  border-radius: 5px;
+}
+
+.btn-portfolio {
+  background-color: transparent;
+  background-color: #00ff00;
+  color: #00ff00;
+  
+  border-radius: 5px;
+}
+
+.btn:hover {
+  filter: brightness(0.8);
+}
+
+.hero-image {
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #00ff00;
+}
+
+/* Responsive: stack text and image on small screens */
+@media (max-width: 768px) {
+  .hero-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-content,
+  .hero-image {
+    max-width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,114 @@
+/* Hero.css */
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    /* Centrar vertical y horizontalmente el contenedor interno */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    background: linear-gradient(to bottom, #000000, #001400);
+    color: #ffffff;
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Contenedor interno que limitará el ancho y repartirá el espacio
+     entre el texto y la imagen */
+  .hero-wrapper {
+    /* Ocupará el 100% hasta un máximo de 1200px (puedes ajustarlo) */
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* Justifica el espacio como quieras:
+       - space-between: texto e imagen a los extremos pero centrados globalmente
+       - space-around / space-evenly: más espacio alrededor
+       - center: ambos pegados al centro
+    */
+    justify-content: space-between; 
+  }
+  
+  /* Contenido de texto */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 50%; 
+    /* Si quieres centrar el texto en sí, podrías usar:
+       text-align: center;
+    */
+  }
+  
+  .hero-greeting {
+    font-size: 1.2rem;
+    color: #00ff00;
+    margin: 0;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  
+  /* Botones */
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    font-family: inherit;
+  }
+  
+  .btn-resume {
+    background-color: #00ff00;
+    color: #000;
+  }
+  
+  .btn-portfolio {
+    background-color: transparent;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+  }
+  
+  .btn:hover {
+    filter: brightness(0.8);
+  }
+  
+  /* Imagen */
+  .hero-image {
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-image img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #00ff00;
+  }
+  
+  /* Responsivo: en pantallas pequeñas, apilar texto e imagen */
+  @media (max-width: 768px) {
+    .hero-wrapper {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-content,
+    .hero-image {
+      max-width: 100%;
+      text-align: center; /* si lo deseas */
+    }
+  }
+  
