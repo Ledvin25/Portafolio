@@ -1,0 +1,153 @@
+/* About Section Styles */
+.about-section {
+  padding: 5rem 0;
+  background-color: black;
+}
+
+.about-container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.about-content-block {
+  margin-bottom: 4rem;
+}
+
+.about-section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  transition: all 0.8s ease;
+}
+
+.about-description {
+  font-size: 1.125rem;
+  color: #d1d5db;
+  line-height: 1.625;
+  max-width: 56rem;
+  transition: all 0.8s ease;
+}
+
+.about-highlight {
+  font-weight: 600;
+  color: #00ff00;
+}
+
+.about-tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.about-tech-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  background-color: #1f2937;
+  border-radius: 0.5rem;
+  border: 1px solid #374151;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.about-tech-item:hover {
+  transform: scale(1.1) translateY(-5px);
+  border-color: rgba(0, 255, 0, 0.5);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+}
+
+.about-tech-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.about-tech-item:hover .about-tech-icon {
+  color: #00ff00;
+  animation: bounce 0.6s ease;
+}
+
+.about-education-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.about-education-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 0.8s ease;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.about-education-item:hover {
+  transform: translateY(-5px);
+  background-color: rgba(0, 255, 0, 0.05);
+  border: 1px solid rgba(0, 255, 0, 0.2);
+}
+
+.about-education-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about-education-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #00ff00;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.about-education-degree {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.about-education-item:hover .about-education-degree {
+  color: #00ff00;
+}
+
+.about-education-institution {
+  color: #d1d5db;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+.about-education-period {
+  color: #9ca3af;
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+/* Responsive styles for about */
+@media (min-width: 640px) {
+  .about-section-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .about-education-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-container {
+    padding: 0 2rem;
+  }
+}
