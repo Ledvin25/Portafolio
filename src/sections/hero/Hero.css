@@ -127,7 +127,7 @@
 .hero-button {
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
-  font-weight: 500;
+  font-weight: bold;
   transition: all 0.3s ease;
   transform: scale(1);
   border: none;
@@ -135,6 +135,17 @@
   font-size: 1rem;
   width: 100%;
   box-sizing: border-box;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-button:visited,
+.hero-button:active,
+.hero-button:focus {
+  text-decoration: none;
+  color: inherit;
 }
 
 .hero-button:hover {
@@ -145,6 +156,7 @@
   color: #000000;
   background-color: #00ff00;
   box-shadow: 0 4px 14px 0 rgba(0, 255, 0, 0.25);
+  border: none;
 }
 
 .hero-button-primary:hover {

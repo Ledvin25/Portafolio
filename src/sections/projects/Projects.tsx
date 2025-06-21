@@ -70,16 +70,12 @@ export default function Projects() {
 }
 
 function ProjectItem({ project, isVisible, index }: { project: any; isVisible: boolean; index: number }) {
-  const [isHovered, setIsHovered] = useState(false)
-
   return (
     <div
       className={`projects-card ${isVisible ? "animate-slide-in-scale" : "scale-element"}`}
       style={{
         animationDelay: `${300 + index * 200}ms`,
       }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <div className="projects-image-container">
         <img src={project.image || "/placeholder.svg"} alt={project.title} className="projects-image" />
@@ -91,7 +87,7 @@ function ProjectItem({ project, isVisible, index }: { project: any; isVisible: b
         <p className="projects-card-description">{project.description}</p>
 
         <div className="projects-tech-tags">
-          {project.tech.map((tech, techIndex) => (
+          {project.tech.map((tech: string, techIndex: number) => (
             <span key={techIndex} className="projects-tech-tag">
               {tech}
             </span>
@@ -99,7 +95,7 @@ function ProjectItem({ project, isVisible, index }: { project: any; isVisible: b
         </div>
 
         <div className="projects-features">
-          {project.features.map((feature, featureIndex) => (
+          {project.features.map((feature: string, featureIndex: number) => (
             <span key={featureIndex} className="projects-feature-tag">
               {feature}
             </span>

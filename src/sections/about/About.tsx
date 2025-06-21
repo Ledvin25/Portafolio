@@ -6,8 +6,6 @@ import "./About.css"
 export default function About() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
-  const [techHoveredIndex, setTechHoveredIndex] = useState<number | null>(null)
-  const [eduHoveredIndex, setEduHoveredIndex] = useState<number | null>(null)
 
   const technologies = [
     { name: "HTML5" },
@@ -79,15 +77,13 @@ export default function About() {
             Technologies
           </h2>
           <div className="about-tech-grid">
-            {technologies.map((tech, index) => (
+            {technologies.map((tech: { name: string }, index: number) => (
               <div
                 key={index}
                 className={`about-tech-item ${isVisible ? "animate-slide-in-scale" : "scale-element"}`}
                 style={{
                   animationDelay: `${400 + index * 100}ms`,
                 }}
-                onMouseEnter={() => setTechHoveredIndex(index)}
-                onMouseLeave={() => setTechHoveredIndex(null)}
               >
                 <span className="about-tech-icon">
                   <img
@@ -109,13 +105,11 @@ export default function About() {
             Education
           </h2>
           <div className="about-education-grid">
-            {education.map((edu, index) => (
+            {education.map((edu: { degree: string; institution: string; period: string }, index: number) => (
               <div
                 key={index}
                 className={`about-education-item ${isVisible ? "animate-fade-in-up" : "fade-in-element"}`}
                 style={{ animationDelay: `${600 + index * 200}ms` }}
-                onMouseEnter={() => setEduHoveredIndex(index)}
-                onMouseLeave={() => setEduHoveredIndex(null)}
               >
                 <div className="about-education-header">
                   <div className="about-education-dot"></div>
