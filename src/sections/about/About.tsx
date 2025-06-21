@@ -7,20 +7,6 @@ export default function About() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
 
-  const technologies = [
-    { name: "HTML5" },
-    { name: "CSS3" },
-    { name: "React" },
-    { name: "Python" },
-    { name: "C++" },
-    { name: "Node.js" },
-    { name: "PostgreSQL" },
-    { name: "MySQL" },
-    { name: "SQL" },
-    { name: "MongoDB" },
-    { name: "Docker" },
-  ]
-
   const education = [
     {
       degree: "Computer Engineering",
@@ -70,34 +56,6 @@ export default function About() {
             efficient software solutions, with expertise in backend development, API design, and full-stack web
             applications. Committed to continuous learning, I thrive in dynamic, collaborative environments.
           </p>
-        </div>
-
-        {/* Technologies Section */}
-        <div className="about-content-block">
-          <h2
-            className={`about-section-title ${isVisible ? "animate-fade-in-up" : "fade-in-element"}`}
-          >
-            Technologies
-          </h2>
-          <div className="about-tech-grid">
-            {technologies.map((tech: { name: string }, index: number) => (
-              <div
-                key={index}
-                className={`about-tech-item ${isVisible ? "animate-slide-in-scale" : "scale-element"}`}
-                style={{
-                  animationDelay: `${400 + index * 100}ms`,
-                }}
-              >
-                <span className="about-tech-icon">
-                  <img
-                    src={`/tech/${tech.name.replace(/\s|\+/g, '').toLowerCase()}.webp`}
-                    alt={tech.name}
-                    style={{ width: 40, height: 40 }}
-                  />
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Education Section */}
