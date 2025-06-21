@@ -36,7 +36,14 @@ export default function Hero() {
               SOFTWARE ENGINEER
             </h2>
             <div className={`hero-buttons animate-delay-500 ${isVisible ? "animate-fade-in-up" : "fade-in-element"}`}>
-              <button className="hero-button hero-button-primary">Resume</button>
+              <a
+                className="hero-button hero-button-primary"
+                href="https://ledvin25.netlify.app/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Resume
+              </a>
               <button
                 className="hero-button hero-button-secondary"
                 onClick={() => {
