@@ -20,6 +20,7 @@
   color: #ffffff;
   margin-bottom: 2rem;
   transition: all 0.8s ease;
+  will-change: transform, opacity;
 }
 
 .about-description {
@@ -52,6 +53,7 @@
   border: 1px solid #374151;
   transition: all 0.3s ease;
   cursor: pointer;
+  will-change: transform, box-shadow;
 }
 
 .about-tech-item:hover {

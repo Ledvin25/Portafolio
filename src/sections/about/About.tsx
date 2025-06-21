@@ -44,6 +44,9 @@ export default function About() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true)
+          if (sectionRef.current) {
+            observer.unobserve(sectionRef.current)
+          }
         }
       },
       { threshold: 0.1 },
@@ -72,7 +75,7 @@ export default function About() {
         {/* Technologies Section */}
         <div className="about-content-block">
           <h2
-            className={`about-section-title animate-delay-300 ${isVisible ? "animate-fade-in-up" : "fade-in-element"}`}
+            className={`about-section-title ${isVisible ? "animate-fade-in-up" : "fade-in-element"}`}
           >
             Technologies
           </h2>
