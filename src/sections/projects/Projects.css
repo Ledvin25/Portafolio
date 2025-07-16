@@ -185,6 +185,31 @@
   text-decoration: none;
 }
 
+.projects-button.projects-button-secondary {
+  background-color: #ffffff;
+  color: #000000; /* Change text color to black */
+  margin-left: 0.5rem;
+  box-shadow: 0 4px 14px 0 rgba(255, 255, 255, 0.25);
+}
+
+.projects-button.projects-button-secondary:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(255, 255, 255, 0.4);
+}
+
+.projects-button.disabled {
+  background-color: #d1d5db; /* Light gray background */
+  color: #6b7280; /* Dark gray text */
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.projects-button.disabled:hover {
+  transform: none; /* No hover effect */
+  box-shadow: none;
+}
+
 /* Responsive styles for projects */
 @media (min-width: 640px) {
   .projects-title {

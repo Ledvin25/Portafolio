@@ -9,13 +9,15 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "AVANT GLAMPING",
+      title: "Avant Glamping",
       subtitle: "TO REST FOR YOU OR A NEW VENTURE FOR RENT",
       description:
         "Full-stack application developed with React, Python, and Flask. Allows users to quote and book pods, as well as apply for available jobs.",
       features: ["QUOTE YOUR POD", "APPLY FOR JOBS", "RESERVATION SYSTEM"],
       image: "/projects/avant.webp",
       link: "https://avantglamping.com",
+      codeLink: "",
+      codePrivate: false, // Code is public
       tech: ["React", "Python", "Flask"],
     },
     {
@@ -23,10 +25,12 @@ export default function Projects() {
       subtitle: "First aerospace startup for launches in Costa Rica",
       description:
         "Responsive website created with React, React Router, CSS3, and Python. Showcases architectural designs, projects, and contact forms.",
-      features: ["RESPONSIVE DESIGN", "PROJECT GALLERY", "CONTACT FORMS", "JOB APPLICATIONS"],
+      features: ["RESPONSIVE DESIGN", "PROJECT GALLERY", "CONTACT FORMS", "JOB APPLICATION"],
       image: "/projects/vel.webp",
       link: "https://velspacecr.com",
-      tech: ["React", "React Router", "CSS3", "Python", "FastAPI"],
+      codeLink: "",
+      codePrivate: true, // Code is private
+      tech: ["Docker","Nginx","React", "React Router", "CSS3", "Python", "Flask"],
     },
   ]
 
@@ -107,13 +111,33 @@ function ProjectItem({ project, isVisible, index }: { project: any; isVisible: b
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={e => {
-            e.preventDefault();
-            window.open(project.link, '_blank', 'noopener,noreferrer');
+          onClick={(e) => {
+            e.preventDefault()
+            window.open(project.link, "_blank", "noopener,noreferrer")
           }}
         >
           VIEW PROJECT
         </a>
+        {project.codePrivate ? ( // Render a disabled button if the code is private
+          <button className="projects-button projects-button-secondary disabled" disabled>
+            VIEW CODE
+          </button>
+        ) : (
+          project.codeLink && (
+            <a
+              className="projects-button projects-button-secondary"
+              href={project.codeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault()
+                window.open(project.codeLink, "_blank", "noopener,noreferrer")
+              }}
+            >
+              VIEW CODE
+            </a>
+          )
+        )}
       </div>
     </div>
   )
