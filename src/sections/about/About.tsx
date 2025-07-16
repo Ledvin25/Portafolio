@@ -43,9 +43,6 @@ export default function About() {
     ([entry]: IntersectionObserverEntry[]) => {
       if (entry.isIntersecting) {
         setIsVisible(true)
-        if (sectionRef.current) {
-          observer.unobserve(sectionRef.current)
-        }
       }
     },
     [],
@@ -58,7 +55,12 @@ export default function About() {
       observer.observe(sectionRef.current)
     }
 
-    return () => observer.disconnect()
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current) // Move unobserve logic here.
+      }
+      observer.disconnect()
+    }
   }, [observerCallback])
 
   return (
