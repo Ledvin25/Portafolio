@@ -10,6 +10,7 @@ export default function About() {
   const technologies = [
     { name: "HTML5", img: "/tech/html5.webp" },
     { name: "CSS3", img: "/tech/css3.webp" },
+    { name: "React", img: "/tech/react.webp" },
     { name: "Python", img: "/tech/python.webp" },
     { name: "C++", img: "/tech/c.webp" },
     { name: "Node.js", img: "/tech/nodejs.webp" },
