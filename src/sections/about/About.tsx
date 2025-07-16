@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, useCallback } from "react"
 import "./About.css"
 
 export default function About() {
@@ -39,25 +39,27 @@ export default function About() {
     },
   ]
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          if (sectionRef.current) {
-            observer.unobserve(sectionRef.current)
-          }
+  const observerCallback = useCallback(
+    ([entry]: IntersectionObserverEntry[]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true)
+        if (sectionRef.current) {
+          observer.unobserve(sectionRef.current)
         }
-      },
-      { threshold: 0.1 },
-    )
+      }
+    },
+    [],
+  )
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(observerCallback, { threshold: 0.1 })
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current)
     }
 
     return () => observer.disconnect()
-  }, [])
+  }, [observerCallback])
 
   return (
     <section ref={sectionRef} id="about" className="about-section">
