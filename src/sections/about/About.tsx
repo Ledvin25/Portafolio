@@ -92,6 +92,7 @@ export default function About() {
                   <img
                     src={tech.img}
                     alt={tech.name}
+                    loading="lazy"
                     style={{ width: 40, height: 40 }}
                   />
                 </span>

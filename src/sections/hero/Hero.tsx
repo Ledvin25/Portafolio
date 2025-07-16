@@ -38,7 +38,7 @@ export default function Hero() {
             <div className={`hero-buttons animate-delay-500 ${isVisible ? "animate-fade-in-up" : "fade-in-element"}`}>
               <a
                 className="hero-button hero-button-primary"
-                href="https://ledvin25.netlify.app/resume.pdf"
+                href="https://ledvin.dev/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
