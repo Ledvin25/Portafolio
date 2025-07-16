@@ -12,21 +12,21 @@ export default function Projects() {
       title: "AVANT GLAMPING",
       subtitle: "TO REST FOR YOU OR A NEW VENTURE FOR RENT",
       description:
-        "Aplicación full-stack desarrollada con React, Python y Flask. Permite cotizar y reservar pods, así como aplicar a empleos disponibles.",
-      features: ["COTIZA TU POD", "APLICA A EMPLEOS", "SISTEMA DE RESERVAS"],
+        "Full-stack application developed with React, Python, and Flask. Allows users to quote and book pods, as well as apply for available jobs.",
+      features: ["QUOTE YOUR POD", "APPLY FOR JOBS", "RESERVATION SYSTEM"],
       image: "/projects/avant.webp",
       link: "https://avantglamping.com",
       tech: ["React", "Python", "Flask"],
     },
     {
       title: "VEL Space",
-      subtitle: "Primera startup aeroespacial de lanzamientos en Costa Rica",
+      subtitle: "First aerospace startup for launches in Costa Rica",
       description:
-        "Sitio web responsivo creado con React, React Router, CSS3 y Python. Presenta diseños arquitectónicos, proyectos y formularios de contacto.",
-      features: ["DISEÑO RESPONSIVO", "GALERÍA DE PROYECTOS", "FORMULARIOS DE CONTACTO"],
+        "Responsive website created with React, React Router, CSS3, and Python. Showcases architectural designs, projects, and contact forms.",
+      features: ["RESPONSIVE DESIGN", "PROJECT GALLERY", "CONTACT FORMS", "JOB APPLICATIONS"],
       image: "/projects/vel.webp",
       link: "https://velspacecr.com",
-      tech: ["React", "React Router", "CSS3", "Python"],
+      tech: ["React", "React Router", "CSS3", "Python", "FastAPI"],
     },
   ]
 
