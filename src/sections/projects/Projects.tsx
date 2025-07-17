@@ -24,7 +24,7 @@ export default function Projects() {
       title: "Avant Glamping",
       subtitle: "TO REST FOR YOU OR A NEW VENTURE FOR RENT",
       description:
-        "Full-stack application developed with React, Python, and Flask. Allows users to quote and book pods, as well as apply for available jobs.",
+        "Full-stack application developed with React, Python, and Flask. Allows users to quote and purchase pods, a new and original idea for glamping.",
       features: ["QUOTE YOUR POD", "APPLY FOR JOBS", "RESERVATION SYSTEM"],
       image: "/projects/avant.webp",
       link: "https://avantglamping.com",
