@@ -14,7 +14,7 @@ export default function Projects() {
       description:
         "A demo project showcasing a chatbot built with OpenAI to read and answer questions from a preloaded PDF. Developed without LangChain, featuring custom chunking and query handling.",
       features: ["PDF CHUNKING", "CUSTOM QUERY HANDLING", "AI-POWERED RESPONSES"],
-      image: "/projects/pdf-chatbot.webp",
+      image: "/projects/chat_bot.webp",
       link: "https://pdf-reader-weld.vercel.app/",
       codeLink: "https://github.com/Ledvin25/PDF-Reader",
       codePrivate: false, // Code is public
