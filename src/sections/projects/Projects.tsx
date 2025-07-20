@@ -29,7 +29,7 @@ export default function Projects() {
       image: "/projects/avant.webp",
       link: "https://avantglamping.com",
       codeLink: "",
-      codePrivate: false, // Code is public
+      codePrivate: true, // Code is public
       tech: ["React", "Python", "Flask"],
     },
     {
