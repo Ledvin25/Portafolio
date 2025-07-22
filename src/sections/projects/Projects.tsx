@@ -80,6 +80,10 @@ export default function Projects() {
             <ProjectItem key={index} project={project} isVisible={isVisible} index={index} />
           ))}
         </div>
+        {/* Pending projects message */}
+        <div style={{ marginTop: "2rem", textAlign: "center", color: "#9ca3af", fontStyle: "italic" }}>
+          Pending to add the rest of the projects — I haven't had much time to upload them yet.
+        </div>
       </div>
     </section>
   )
