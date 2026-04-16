@@ -1,79 +1,57 @@
-"use client"
+import { useState } from 'react';
+import { navItems, profile } from '../../data/portfolio';
+import './Header.css';
 
-import { useState } from "react"
-import "./Header.css"
+function scrollToSection(sectionId: string, closeMenu?: () => void): void {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+  closeMenu?.();
+}
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-    setIsMenuOpen(false)
-  }
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="header-section">
-      <nav className="header-nav-container">
-        <div className="header-nav-content">
-          <div>
-            <span className="header-logo">
-              Led<span className="header-logo-accent">vin</span>
-            </span>
-          </div>
+      <div className="container header-row">
+        <button className="header-brand" onClick={() => scrollToSection('home')}>
+          {profile.name}
+        </button>
 
-          {/* Desktop Navigation */}
-          <div className="header-nav-desktop">
-            <div className="header-nav-links">
-              <button onClick={() => scrollToSection("home")} className="header-nav-button">
-                HOME
-                <span className="header-nav-underline"></span>
-              </button>
-              <button onClick={() => scrollToSection("about")} className="header-nav-button">
-                ABOUT ME
-                <span className="header-nav-underline"></span>
-              </button>
-              <button onClick={() => scrollToSection("projects")} className="header-nav-button">
-                PROJECTS
-                <span className="header-nav-underline"></span>
-              </button>
-              <button onClick={() => scrollToSection("contact")} className="header-nav-button">
-                CONTACT
-                <span className="header-nav-underline"></span>
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <div>
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="header-mobile-menu-button">
-              <svg className="header-mobile-menu-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+        <nav className="header-nav desktop-nav" aria-label="Primary">
+          {navItems.map((item) => (
+            <button key={item.id} onClick={() => scrollToSection(item.id)} className="header-link">
+              {item.label}
             </button>
+          ))}
+        </nav>
+
+        <a className="button button-secondary header-cv" href={profile.resumeUrl} target="_blank" rel="noopener noreferrer">
+          CV
+        </a>
+
+        <button className="header-menu-toggle" onClick={() => setMenuOpen((prev) => !prev)} aria-label="Toggle menu">
+          Menu
+        </button>
+      </div>
+
+      {menuOpen && (
+        <div className="header-mobile">
+          <div className="container header-mobile-inner">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id, () => setMenuOpen(false))}
+                className="header-link"
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
         </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="header-mobile-menu">
-            <button onClick={() => scrollToSection("home")} className="header-nav-button">
-              HOME
-            </button>
-            <button onClick={() => scrollToSection("about")} className="header-nav-button">
-              ABOUT ME
-            </button>
-            <button onClick={() => scrollToSection("projects")} className="header-nav-button">
-              PROJECTS
-            </button>
-            <button onClick={() => scrollToSection("contact")} className="header-nav-button">
-              CONTACT
-            </button>
-          </div>
-        )}
-      </nav>
+      )}
     </header>
-  )
+  );
 }

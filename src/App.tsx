@@ -6,15 +6,14 @@ import Projects from './sections/projects/Projects';
 import Contact from './sections/contact/Contact';
 
 function App() {
-
   return (
-    <>
+    <div className="site">
       <Header />
       <Hero />
       <About />
       <Projects />
       <Contact />
-    </>
+    </div>
   )
 }
 
