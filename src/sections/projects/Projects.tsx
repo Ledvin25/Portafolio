@@ -3,12 +3,13 @@ import './Projects.css';
 
 const mainProjects = projects.filter((project) => project.tier === 'main');
 const secondaryProjects = projects.filter((project) => project.tier === 'secondary');
-const experimentalProjects = projects.filter((project) => project.tier === 'experimental');
+const otherProjects = projects.filter((project) => project.tier === 'other');
 
 function ProjectCard({
   title,
   tier,
   image,
+  imagePosition,
   summary,
   problem,
   built,
@@ -21,7 +22,7 @@ function ProjectCard({
   codeUrl,
   note,
 }: Project) {
-  const tierLabel = tier === 'main' ? 'Main case' : tier === 'secondary' ? 'Secondary case' : 'Experimental case';
+  const tierLabel = tier === 'main' ? 'Main case' : tier === 'secondary' ? 'Secondary case' : 'Other case';
 
   return (
     <article className={`projects-card projects-card-${tier}`}>
@@ -29,7 +30,13 @@ function ProjectCard({
         <span className="projects-tier-chip">{tierLabel}</span>
         <span className="projects-image-overlay" aria-hidden="true" />
         {image ? (
-          <img src={image} alt={title} className="projects-image" loading="lazy" />
+          <img
+            src={image}
+            alt={title}
+            className="projects-image"
+            style={{ objectPosition: imagePosition }}
+            loading="lazy"
+          />
         ) : (
           <div className="projects-image-placeholder">
             <span>{title}</span>
@@ -63,16 +70,20 @@ function ProjectCard({
         <p className="projects-stack">{stack.join(' | ')}</p>
         {note && <p className="projects-note">{note}</p>}
 
-        <div className="projects-actions">
-          <a className="button button-primary" href={ctaUrl} target="_blank" rel="noopener noreferrer">
-            {ctaLabel}
-          </a>
-          {codeLabel && codeUrl && (
-            <a className="button button-secondary" href={codeUrl} target="_blank" rel="noopener noreferrer">
-              {codeLabel}
-            </a>
-          )}
-        </div>
+        {(ctaUrl || (codeLabel && codeUrl)) && (
+          <div className="projects-actions">
+            {ctaUrl && (
+              <a className="button button-primary" href={ctaUrl} target="_blank" rel="noopener noreferrer">
+                {ctaLabel}
+              </a>
+            )}
+            {codeLabel && codeUrl && (
+              <a className="button button-secondary" href={codeUrl} target="_blank" rel="noopener noreferrer">
+                {codeLabel}
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </article>
   );
@@ -107,7 +118,7 @@ export default function Projects() {
 
         <ProjectGroup title="Main projects" items={mainProjects} />
         <ProjectGroup title="Secondary projects" items={secondaryProjects} />
-        <ProjectGroup title="Experimental" items={experimentalProjects} />
+        <ProjectGroup title="Other" items={otherProjects} />
       </div>
     </section>
   );

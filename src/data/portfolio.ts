@@ -14,12 +14,13 @@ export type EducationItem = {
   period: string;
 };
 
-export type ProjectTier = 'main' | 'secondary' | 'experimental';
+export type ProjectTier = 'main' | 'secondary' | 'other';
 
 export type Project = {
   title: string;
   tier: ProjectTier;
   image?: string;
+  imagePosition?: string;
   summary: string;
   problem: string;
   built: string;
@@ -27,7 +28,7 @@ export type Project = {
   reliability: string;
   stack: string[];
   ctaLabel: string;
-  ctaUrl: string;
+  ctaUrl?: string;
   codeLabel?: string;
   codeUrl?: string;
   note?: string;
@@ -173,6 +174,94 @@ export const projects: Project[] = [
     note: 'Sensitive internal details are intentionally omitted.',
   },
   {
+    title: 'KerbalGalaxy 3',
+    tier: 'other',
+    image: '/projects/kerbalgalaxy3.webp',
+    summary:
+      "Rebuilt KerbalGalaxy 3's planetary systems from the ground up, bringing an expanded galaxy with additional star systems, planets, black holes, and wormholes to Kerbal Space Program.",
+    problem:
+      'Reconstruct and modernize the galactic exploration experience while ensuring compatibility between planetary systems and visual dependencies.',
+    built:
+      'Recreated planetary configurations and celestial environments from scratch, reworked and developed textures, and implemented black hole, wormhole, and visual effects compatibility through integrations with Kopernicus and other KSP mod dependencies.',
+    live: 'Published on CurseForge and SpaceDock, with the original project and third-party dependencies credited.',
+    reliability: '35,700+ CurseForge downloads.',
+    stack: ['KSP Modding', 'Kopernicus', 'Planetary Systems', 'Visual Effects', '3D Assets'],
+    ctaLabel: 'View Mod',
+    ctaUrl: 'https://www.curseforge.com/kerbal/ksp-mods/kerbalgalaxy3',
+    codeLabel: 'GitHub',
+    codeUrl: 'https://github.com/Ledvin25/Kerbal-Galaxy-3',
+  },
+  {
+    title: 'Real Solar System REMASTERED',
+    tier: 'other',
+    image: '/projects/rss-remastered.webp',
+    summary:
+      'Technical rework of Real Solar System for Kerbal Space Program, adapting the original planetary configurations to a newer version of Kopernicus.',
+    problem:
+      'Restore compatibility of the original Real Solar System with updated planetary modding frameworks and dependencies.',
+    built:
+      'Extensively reworked the original RSS configuration files to support the newer Kopernicus version, adapting planetary definitions, integrating dependencies, and preparing a compatible public release.',
+    live: 'Published on CurseForge, preserving attribution to the original Real Solar System project.',
+    reliability: '78,000+ CurseForge downloads.',
+    stack: ['KSP Modding', 'Kopernicus', 'Planetary Configuration', 'Dependency Integration'],
+    ctaLabel: 'View Mod',
+    ctaUrl: 'https://www.curseforge.com/kerbal/ksp-mods/real-solar-system-remastered',
+  },
+  {
+    title: 'Force Feedback Enhanced for My Summer Car',
+    tier: 'other',
+    image: '/projects/ffbe.webp',
+    summary: 'Published force-feedback mod improving steering resistance and driving feedback for Logitech wheels.',
+    problem: 'My Summer Car lacks sufficiently detailed force-feedback behavior for supported steering wheels.',
+    built:
+      'Implemented model-based steering forces, road and engine feedback, braking resistance and configurable presets.',
+    live: 'Published on Nexus Mods.',
+    reliability: 'Public release with community feedback and iterative compatibility improvements.',
+    stack: ['Game Modding', 'Force Feedback', 'Logitech SDK', 'Simulation'],
+    ctaLabel: 'View Mod',
+    ctaUrl: 'https://www.nexusmods.com/mysummercar/mods/10632',
+  },
+  {
+    title: 'CerviCARE AI VR',
+    tier: 'other',
+    image: '/projects/cervicare.webp',
+    imagePosition: 'center 20%',
+    summary: 'Educational VR experience built in Unreal Engine 5.7.4 for Meta Quest.',
+    problem: 'Create an interactive training experience for a simulated cervical imaging procedure.',
+    built:
+      'Built two VR scenes with Blueprint-driven progression, object manipulation, controller interactions, 3D widgets and guided instructions.',
+    live: 'Functional prototype prepared for a university VR exhibition.',
+    reliability: 'Standalone Quest deployment, VR interaction testing and technical documentation.',
+    stack: ['Unreal Engine', 'Blueprints', 'OpenXR', 'Meta XR', 'UMG'],
+    ctaLabel: 'Watch Animatic',
+    ctaUrl: 'https://youtu.be/Oo3u5c4bSjs',
+  },
+  {
+    title: 'SemiReal Flight Computer',
+    tier: 'other',
+    image: '/projects/srfc.webp',
+    imagePosition: 'center 25%',
+    summary: 'In-development KSP mod introducing realistic spacecraft avionics and flight-computer simulation.',
+    problem: 'KSP exposes information and control capabilities that bypass realistic spacecraft avionics.',
+    built: 'Created a C# plugin architecture with simulated sensors and modular avionics foundations.',
+    live: 'In development.',
+    reliability: 'Incremental implementation and testing.',
+    stack: ['C#', 'KSP', 'Simulation', 'Avionics'],
+    ctaLabel: 'View Preview',
+  },
+  {
+    title: 'Motor Control Center',
+    tier: 'other',
+    image: '/projects/controlcentre.webp',
+    summary: 'Industrial VR maintenance prototype developed using Unreal Engine.',
+    problem: 'Create an interactive simulation of electrical module installation and power restoration.',
+    built: 'Implemented object manipulation, module placement, VR navigation and audiovisual feedback.',
+    live: 'Functional prototype.',
+    reliability: 'Interactive mechanics implemented and tested during development.',
+    stack: ['Unreal Engine', 'Blueprints', 'VR', 'Blender'],
+    ctaLabel: 'View Preview',
+  },
+  {
     title: 'Poramoralarte',
     tier: 'secondary',
     image: '/projects/poramoralarte.webp',
@@ -203,18 +292,5 @@ export const projects: Project[] = [
     stack: ['React', 'Python', 'Flask'],
     ctaLabel: 'View website',
     ctaUrl: 'https://avantglamping.com',
-  },
-  {
-    title: 'Force Feedback Mod for My Summer Car',
-    tier: 'experimental',
-    summary: 'Experimental project focused on force-feedback behavior integration and tuning.',
-    problem: 'Needed to map hardware-response behavior into a simulation context with unstable edge cases.',
-    built: 'Implemented iterative behavior tuning and debugging loops for force-feedback response quality.',
-    live: 'Experimental scope used as a technical sandbox.',
-    reliability:
-      'Demonstrates structured debugging discipline and practical handling of unstable behavior conditions.',
-    stack: ['Integration', 'Debugging', 'Iteration'],
-    ctaLabel: 'Request summary',
-    ctaUrl: 'mailto:ledvin25@hotmail.com?subject=Force%20Feedback%20Mod%20Summary',
   },
 ];

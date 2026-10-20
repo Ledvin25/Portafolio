@@ -46,11 +46,6 @@
   background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.08) 0%, var(--surface-soft) 24%, var(--surface-soft) 100%);
 }
 
-.projects-card-experimental {
-  border-style: dashed;
-  opacity: 0.92;
-}
-
 .projects-image-shell {
   position: relative;
   border-bottom: 1px solid var(--line);

@@ -11,10 +11,10 @@
   --line-accent: rgba(var(--accent-rgb), 0.48);
   --text: #f2f2f2;
   --muted: #b1b1b1;
-  --accent-rgb: 46, 139, 87;
-  --accent: #2e8b57;
-  --accent-strong: #38a46a;
-  --accent-deep: #1f6b44;
+  --accent-rgb: 0, 200, 58;
+  --accent: #00C83A;
+  --accent-strong: #25E65D;
+  --accent-deep: #00892A;
   --accent-soft: rgba(var(--accent-rgb), 0.16);
   --accent-faint: rgba(var(--accent-rgb), 0.09);
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.28);
